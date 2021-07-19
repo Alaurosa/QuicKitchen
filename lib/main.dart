@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simplymakedemo/home.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,38 +29,56 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  void home(){
+  Navigator.push(context, MaterialPageRoute(builder: (context) => homePage()));
+}
 
   @override
   Widget build(BuildContext context) {
+    var container= Container(
+      padding:EdgeInsets.all(20),
+      width:300,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.blue),
+        borderRadius: BorderRadius.all(
+          Radius.circular(5.0),
+        ),
+      ),
+    );
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Center(child: Text("Welcome Back")),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+            Container(
+              alignment: FractionalOffset(0.2, 0.6),
+              child: Text("Username"),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            Padding(
+              padding: const EdgeInsets.only(bottom: 15.0),
+              child: container,
             ),
+            Container(
+              alignment: FractionalOffset(0.2,0.6),
+              child: Text("Password"),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom:8.0),
+              child: container,
+            ),
+            Text("Forgot your account details?"),
+            Container(
+              child: ElevatedButton(onPressed: () => home(), child: Text("Next")),
+              width: 100,
+              ),
+
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
       ),
     );
   }
