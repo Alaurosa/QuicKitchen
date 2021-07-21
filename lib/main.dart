@@ -71,11 +71,23 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: const EdgeInsets.only(bottom:8.0),
               child: container,
             ),
-            Text("Forgot your account details?"),
-            Container(
-              child: ElevatedButton(onPressed: () => home(), child: Text("Next")),
-              width: 100,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Forgot your account details?"),
+                Padding(
+                  padding: const EdgeInsets.only(left: 40.0),
+                  child: Text("Sign Up"),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                child: ElevatedButton(onPressed: () => home(), child: Text("Next")),
+                width: 100,
+                ),
+            ),
 
           ],
         ),
