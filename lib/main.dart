@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:simplymakedemo/home.dart';
+import 'package:simplymakedemo/signup.dart';
 
 void main() {
   runApp(MyApp());
@@ -33,28 +34,50 @@ class _MyHomePageState extends State<MyHomePage> {
   String displayedText=" ";
 
   void home(){
-  Navigator.push(context, MaterialPageRoute(builder: (context) => homePage()));
-  setState(() {
-    displayedText=" ";
-  });
-}
+    Navigator.push(context, MaterialPageRoute(builder: (context) => homePage()));
+    setState(() {
+      displayedText=" ";
+    });
+  }
 
+ void signup(){
+   Navigator.push(context, MaterialPageRoute(builder: (content)=> createAccount()));
+   setState(() {
+     displayedText=" ";
+   });
+ }
   @override
   Widget build(BuildContext context) {
       
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text("Welcome Back")),
+        title: Center(
+          child: Text(
+            "Welcome Back",style: TextStyle(
+              fontSize:30
+            )
+          )
+        ),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(bottom:20.0),
+              child: Text(
+                "Sign In",
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                )
+              ),
+            ),
             Container(
               alignment: FractionalOffset(0.1, 0.6),
               child: Text(
                 "Username",
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(fontSize: 18.0),
                 ),
             ),
             Padding(
@@ -99,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: TextButton.styleFrom(
                       textStyle: const TextStyle(fontSize: 18),
                     ),
-                    onPressed: () => {},
+                    onPressed: () => signup(),
                     child: const Text('Sign Up'),
                   ),
                 ),

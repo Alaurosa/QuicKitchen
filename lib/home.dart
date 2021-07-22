@@ -23,8 +23,7 @@ class _homePageState extends State<homePage> {
     );
     
     return Scaffold(
-      appBar: AppBar(title: Center(child: Text("Your Ingredients"))
-      ),
+      appBar: AppBar(title:(Text("Your Ingredients")),),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
