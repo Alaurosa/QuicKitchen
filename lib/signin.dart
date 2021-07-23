@@ -29,91 +29,107 @@ class _openAccountState extends State<openAccount> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(bottom:20.0),
-              child: Text(
-                "Sign In",
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                )
-              ),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              "assets/SimplyMake food background.jpg"
             ),
-            Container(
-              alignment: FractionalOffset(0.1, 0.6),
-              child: Text(
-                "Username",
-                style: TextStyle(fontSize: 18.0),
+            fit: BoxFit.cover,
+          )
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(bottom:20.0),
+                child: Text(
+                  "Sign In",
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  )
                 ),
-            ),
-            Padding(
-                padding: const EdgeInsets.symmetric(horizontal:20.0),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    border:OutlineInputBorder()
-                  ),
+              ),
+              Container(
+                alignment: FractionalOffset(0.1, 0.6),
+                child: Text(
+                  "Username",
                   style: TextStyle(fontSize: 18.0),
-                  onChanged: (text){
-                    displayedText = text;
-                  },
-                ),
-              ),
-            Container(
-              alignment: FractionalOffset(0.1,0.6),
-              child: Text(
-                "Password",
-                style: TextStyle(fontSize:18.0),
-              ),
-              padding: const EdgeInsets.only(top:20.0),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal:20.0),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    border:OutlineInputBorder()
                   ),
-                  style: TextStyle(fontSize: 18.0),
-                  onChanged: (text){
-                    displayedText = text;
-                  },  
-                ),
               ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("Forgot your account details?"),
-                Padding(
-                  padding: const EdgeInsets.only(left:40.0),
-                  child: TextButton(
-                    style: TextButton.styleFrom(
-                      textStyle: const TextStyle(fontSize: 18),
+              Padding(
+                  padding: const EdgeInsets.symmetric(horizontal:20.0),
+                  child: Container(
+                    color: Colors.grey,
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        border:OutlineInputBorder()
+                      ),
+                      style: TextStyle(fontSize: 18.0),
+                      onChanged: (text){
+                        displayedText = text;
+                      },
                     ),
-                    onPressed: () => signup(),
-                    child: const Text('Sign Up'),
                   ),
                 ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Container(
-                child: ElevatedButton(
-                  onPressed: () => home(),
-                  child: Text("Next"),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.lightGreen.shade200,
-                    onPrimary: Colors.white, 
-                  ),
+              Container(
+                alignment: FractionalOffset(0.1,0.6),
+                child: Text(
+                  "Password",
+                  style: TextStyle(fontSize:18.0),
                 ),
-                width: 100,
+                padding: const EdgeInsets.only(top:20.0),
               ),
-            ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal:20.0),
+                  child: Container(
+                    color: Colors.grey,
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        border:OutlineInputBorder()
+                      ),
+                      style: TextStyle(fontSize: 18.0),
+                      onChanged: (text){
+                        displayedText = text;
+                      },  
+                    ),
+                  ),
+                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Forgot your account details?"),
+                  Padding(
+                    padding: const EdgeInsets.only(left:40.0),
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                        textStyle: const TextStyle(fontSize: 18),
+                      ),
+                      onPressed: () => signup(),
+                      child: const Text('Sign Up'),
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Container(
+                  child: ElevatedButton(
+                    onPressed: () => home(),
+                    child: Text("Next"),
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.lightGreen.shade200,
+                      onPrimary: Colors.white, 
+                    ),
+                  ),
+                  width: 100,
+                ),
+              ),
 
-          ],
+            ],
+          ),
         ),
       ),
     );      

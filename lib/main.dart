@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[ 
               Container(
-                child:Image.asset("assets/simplyMake logo.png"),
+                child:Image.asset("assets/SimplyMake logo.png"),
               ),
               Padding(
                 padding: const EdgeInsets.all(20),
