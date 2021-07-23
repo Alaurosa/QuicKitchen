@@ -1,7 +1,5 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:simplymakedemo/home.dart';
-import 'package:simplymakedemo/signup.dart';
+import 'package:simplymakedemo/signin.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,112 +29,38 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String displayedText=" ";
-
-  void home(){
-    Navigator.push(context, MaterialPageRoute(builder: (context) => homePage()));
-    setState(() {
-      displayedText=" ";
-    });
+  void signin(){
+    Navigator.push(context, MaterialPageRoute(builder: (context)=> openAccount()));
   }
-
- void signup(){
-   Navigator.push(context, MaterialPageRoute(builder: (content)=> createAccount()));
-   setState(() {
-     displayedText=" ";
-   });
- }
   @override
   Widget build(BuildContext context) {
-      
     return Scaffold(
-      appBar: AppBar(
-        title: Center(
-          child: Text(
-            "Welcome Back",style: TextStyle(
-              fontSize:30
-            )
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/SimplyMake background.jpg"),
+            fit: BoxFit.cover,
           )
         ),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(bottom:20.0),
-              child: Text(
-                "Sign In",
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                )
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[ 
+              Container(
+                child:Image.asset("assets/simplyMake logo.png"),
               ),
-            ),
-            Container(
-              alignment: FractionalOffset(0.1, 0.6),
-              child: Text(
-                "Username",
-                style: TextStyle(fontSize: 18.0),
-                ),
-            ),
-            Padding(
-                padding: const EdgeInsets.symmetric(horizontal:20.0),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    border:OutlineInputBorder()
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    textStyle: const TextStyle(fontSize: 30)
                   ),
-                  style: TextStyle(fontSize: 18.0),
-                  onChanged: (text){
-                    displayedText = text;
-                  },
-                ),
-              ),
-            Container(
-              alignment: FractionalOffset(0.1,0.6),
-              child: Text(
-                "Password",
-                style: TextStyle(fontSize:18.0),
-              ),
-              padding: const EdgeInsets.only(top:20.0),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal:20.0),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    border:OutlineInputBorder()
-                  ),
-                  style: TextStyle(fontSize: 18.0),
-                  onChanged: (text){
-                    displayedText = text;
-                  },  
-                ),
-              ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("Forgot your account details?"),
-                Padding(
-                  padding: const EdgeInsets.only(left:40.0),
-                  child: TextButton(
-                    style: TextButton.styleFrom(
-                      textStyle: const TextStyle(fontSize: 18),
-                    ),
-                    onPressed: () => signup(),
-                    child: const Text('Sign Up'),
+                  onPressed: () => signin(),
+                  child: const Text("Get Started"),
                   ),
                 ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Container(
-                child: ElevatedButton(onPressed: () => home(), child: Text("Next")),
-                width: 100,
-                ),
-            ),
-
-          ],
+            ],
+          ),
         ),
       ),
     );
