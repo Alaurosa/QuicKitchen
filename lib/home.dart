@@ -8,6 +8,8 @@ class homePage extends StatefulWidget {
 }
 
 class _homePageState extends State<homePage> {
+  String displayedText=" ";
+
   @override
   Widget build(BuildContext context) {
     var container= Container(
@@ -23,7 +25,23 @@ class _homePageState extends State<homePage> {
     );
     
     return Scaffold(
-      appBar: AppBar(title:(Text("Your Ingredients")),),
+      appBar: AppBar(
+        title:(
+          TextFormField(
+            cursorColor: Colors.black,
+            decoration: InputDecoration(
+              focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+              contentPadding: const EdgeInsets.all(8.0),
+              border:OutlineInputBorder(borderRadius: BorderRadius.circular(200.0))
+            ),
+            style: TextStyle(fontSize: 18.0),
+            onChanged: (text){
+              displayedText = text;
+            },
+          )
+        ),
+        automaticallyImplyLeading: false,
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

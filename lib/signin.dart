@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:simplymakedemo/home.dart';
+import 'package:simplymakedemo/categories.dart';
 import 'package:simplymakedemo/signup.dart';
 
 class openAccount extends StatefulWidget {
@@ -12,8 +12,8 @@ class openAccount extends StatefulWidget {
 class _openAccountState extends State<openAccount> {
     String displayedText=" ";
 
-  void home(){
-    Navigator.push(context, MaterialPageRoute(builder: (context) => homePage()));
+  void category(){
+    Navigator.push(context, MaterialPageRoute(builder: (context) => customize()));
     setState(() {
       displayedText=" ";
     });
@@ -52,7 +52,7 @@ class _openAccountState extends State<openAccount> {
                   )
                 ),
               ),
-              Container(
+              /*Container(
                 alignment: FractionalOffset(0.1, 0.6),
                 child: Text(
                   "Username",
@@ -62,8 +62,9 @@ class _openAccountState extends State<openAccount> {
               Padding(
                   padding: const EdgeInsets.symmetric(horizontal:20.0),
                   child: Container(
-                    color: Colors.grey,
+                    color: Colors.blueGrey,
                     child: TextFormField(
+                      cursorColor: Colors.black,
                       decoration: InputDecoration(
                         border:OutlineInputBorder()
                       ),
@@ -85,8 +86,9 @@ class _openAccountState extends State<openAccount> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal:20.0),
                   child: Container(
-                    color: Colors.grey,
+                    color: Colors.blueGrey,
                     child: TextFormField(
+                      cursorColor: Colors.black,
                       decoration: InputDecoration(
                         border:OutlineInputBorder()
                       ),
@@ -112,12 +114,12 @@ class _openAccountState extends State<openAccount> {
                     ),
                   ),
                 ],
-              ),
+              ),*/
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Container(
                   child: ElevatedButton(
-                    onPressed: () => home(),
+                    onPressed: () => category(),
                     child: Text("Next"),
                     style: ElevatedButton.styleFrom(
                       primary: Colors.lightGreen.shade200,

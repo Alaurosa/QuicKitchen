@@ -11,7 +11,7 @@ class _createAccountState extends State<createAccount> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:(Text("Create an Account")),),
+      appBar: AppBar(title:(Text("Create an Account",)),),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
