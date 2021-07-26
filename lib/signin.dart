@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:simplymakedemo/categories.dart';
 import 'package:simplymakedemo/signup.dart';
+import 'package:http/http.dart';
+
 
 class openAccount extends StatefulWidget {
   const openAccount({ Key? key }) : super(key: key);
