@@ -11,13 +11,35 @@ class _createAccountState extends State<createAccount> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:(Text("Create an Account",)),),
+      appBar: AppBar(title:(Text("Log In",)),),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+        child: Container(
+         decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              "assets/SimplyMake food background.jpg"
+            ),
+            fit: BoxFit.cover,
+          )
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(bottom:20.0),
+                child: Text(
+                  "Sign In",
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  )
+                ),
+              ),
 
-          ],
+            ],
+          ),
+        ),
         ),
       ),
     );

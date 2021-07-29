@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:simplymakedemo/signin.dart';
+import 'package:simplymakedemo/categories.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,9 +29,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  void signin(){
-    Navigator.push(context, MaterialPageRoute(builder: (context)=> openAccount()));
-  }
+  // void nextPage(){
+  //   Navigator.push(context, MaterialPageRoute(builder: (context)=> customize()));
+  // }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   style: TextButton.styleFrom(
                     textStyle: const TextStyle(fontSize: 30)
                   ),
-                  onPressed: () => signin(),
+                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context)=> customize())),
                   child: const Text("Get Started"),
                   ),
                 ),

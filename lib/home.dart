@@ -13,17 +13,6 @@ class _homePageState extends State<homePage> {
 
   @override
   Widget build(BuildContext context) {
-    var container= Container(
-      padding:EdgeInsets.all(20),
-      width:300,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.blue),
-        borderRadius: BorderRadius.all(
-          Radius.circular(5.0),
-        ),
-      ),
-    );
     
     return Scaffold(
       appBar: AppBar(
@@ -33,7 +22,7 @@ class _homePageState extends State<homePage> {
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
               contentPadding: const EdgeInsets.all(8.0),
-              border:OutlineInputBorder(borderRadius: BorderRadius.circular(200.0))
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(200.0))
             ),
             style: TextStyle(fontSize: 18.0),
             onChanged: (text){
@@ -43,13 +32,28 @@ class _homePageState extends State<homePage> {
         ),
         automaticallyImplyLeading: false,
       ),
+
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            container,
+            
           ],
         )
+      ),
+
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem> [
+          BottomNavigationBarItem(
+          icon: Icon(Icons.account_box_rounded)
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home)
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.playlist_add_rounded)
+          ),
+        ],
       ),
     );
   }
