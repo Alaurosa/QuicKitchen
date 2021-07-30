@@ -16,44 +16,65 @@ class _homePageState extends State<homePage> {
     
     return Scaffold(
       appBar: AppBar(
-        title:(
-          TextFormField(
-            cursorColor: Colors.black,
-            decoration: InputDecoration(
-              focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
-              contentPadding: const EdgeInsets.all(8.0),
-              border: OutlineInputBorder(borderRadius: BorderRadius.circular(200.0))
-            ),
-            style: TextStyle(fontSize: 18.0),
-            onChanged: (text){
-              displayedText = text;
-            },
-          )
+        title:Center(
+          child: (
+            Text(
+              "Find Recipes",
+              style: TextStyle(fontSize: 25)
+            )
+          ),
         ),
         automaticallyImplyLeading: false,
       ),
 
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            
-          ],
+        child: Container(
+          decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              "assets/SimplyMake food background.jpg"
+            ),
+            fit: BoxFit.cover,
+          )
+        ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                width: 375,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextFormField(
+                    cursorColor: Colors.black,
+                    decoration: InputDecoration(
+                      hintText: ("Search by ingredient, dish, etc."),
+                      prefixIcon: Padding(padding: const EdgeInsets.symmetric(horizontal: 4.0),child: Icon(Icons.search)),
+                      focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+                      contentPadding: const EdgeInsets.all(8.0),
+                      border: OutlineInputBorder(),
+                    ),
+                    style: TextStyle(fontSize: 18.0),
+                    onChanged: (text){
+                      displayedText = text;
+                    },
+                  ),
+                ),
+              ),
+              Container(
+                alignment: Alignment.topLeft,
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Text(
+                    "Recommended",
+                    style: TextStyle(
+                      fontSize: 20
+                    )
+                  ),
+                ),
+                )
+            ],
+          ),
         )
-      ),
-
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem> [
-          BottomNavigationBarItem(
-          icon: Icon(Icons.account_box_rounded)
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home)
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.playlist_add_rounded)
-          ),
-        ],
       ),
     );
   }

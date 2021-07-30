@@ -11,7 +11,15 @@ class _createAccountState extends State<createAccount> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:(Text("Log In",)),),
+      appBar: AppBar(
+        title:Center(
+          child: (
+            Text("Your Profile",
+            style: TextStyle(fontSize: 25))
+          ),
+        ),
+        automaticallyImplyLeading: false,
+      ),
       body: Center(
         child: Container(
          decoration: BoxDecoration(

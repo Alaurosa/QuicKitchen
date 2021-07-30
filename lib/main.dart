@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Simply Make',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.teal,
+        accentColor: Colors.white,
       ),
       home: MyHomePage(title: 'Home'),
     );

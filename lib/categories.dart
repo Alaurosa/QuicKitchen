@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:simplymakedemo/home.dart';
+import 'package:simplymakedemo/navigation.dart';
 
 class customize extends StatefulWidget {
   const customize({ Key? key }) : super(key: key);
@@ -10,15 +11,21 @@ class customize extends StatefulWidget {
 
 class _customizeState extends State<customize> {
   String displayedText=" ";
+  Icon defnov = Icon(Icons.check_box_outline_blank);
+  Icon defexp = Icon(Icons.check_box_outline_blank);
+  Icon defpro = Icon(Icons.check_box_outline_blank);
+  int defIconNumber = 0;
 
   final List<List<String>> category = <List<String>>[
     ["assets/korean.jpg", "Korean"],
     ["assets/mexican.jpg", "Mexican"],
-    ["assets/american.jpg", "American"]
+    ["assets/american.jpg", "American"],
+    ["assets/middle eastern.jpg", "Middle Eastern"],
+    ["assets/mediterranean.jpg", "Mediterranean"]
   ];
 
   void home(){
-    Navigator.push(context, MaterialPageRoute(builder: (context) => homePage()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => navigation()));
     setState(() {
       displayedText=" ";
     });
@@ -43,6 +50,14 @@ class _customizeState extends State<customize> {
 
       
       body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              "assets/SimplyMake food background.jpg"
+            ),
+            fit: BoxFit.cover,
+          )
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
@@ -60,29 +75,67 @@ class _customizeState extends State<customize> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  OutlineButton(
-                    child: Text(
-                      "Novice",
-                      style: TextStyle(
-                        fontSize:20
-                      ),
+                  FlatButton(
+                    child: Row(
+                      children: <Widget> [
+                        defnov,
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8.0),
+                          child: Text(
+                            "Novice",
+                            style: TextStyle(
+                              fontSize:20
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                    highlightedBorderColor: Colors.blueGrey,
+                    color: Colors.blueGrey,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15)),
-                      onPressed: (){},
+                      borderRadius: BorderRadius.circular(15)
+                    ),
+                    onPressed: () => setState(() {
+                      if (defIconNumber == 0){
+                      defnov = Icon(
+                        Icons.check_box
+                      );
+                      defIconNumber = 1;
+                    }else{
+                      defnov = Icon(Icons.check_box_outline_blank);
+                      defIconNumber = 0;
+                      }
+                    }),
                   ),
-                  OutlineButton(
-                    child: Text(
-                      "Experienced",
-                      style: TextStyle(
-                        fontSize:20
-                      ),
+                  FlatButton(
+                    child: Row(
+                      children: <Widget> [
+                        defexp,
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8.0),
+                          child: Text(
+                            "Experienced",
+                            style: TextStyle(
+                              fontSize:20
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                    highlightedBorderColor: Colors.blueGrey,
+                    color: Colors.blueGrey,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15)),
-                      onPressed: (){},
+                      borderRadius: BorderRadius.circular(15)
+                    ),
+                    onPressed: () => setState(() {
+                      if (defIconNumber == 0){
+                      defexp = Icon(
+                        Icons.check_box
+                      );
+                      defIconNumber = 1;
+                    }else{
+                      defexp = Icon(Icons.check_box_outline_blank);
+                      defIconNumber = 0;
+                      }
+                    }),
                   ),
                 ],
               ),
@@ -92,18 +145,36 @@ class _customizeState extends State<customize> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  OutlineButton(
-                    child: Text(
-                      "Professional",
-                      style: TextStyle(
-                        fontSize:20
-                      ),
+                  FlatButton(
+                    child: Row(
+                      children: <Widget> [
+                        defpro,
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8.0),
+                          child: Text(
+                            "Professional",
+                            style: TextStyle(
+                              fontSize:20
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                    highlightedBorderColor: Colors.blueGrey,
+                    color: Colors.blueGrey,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15)
                     ),
-                    onPressed: (){},
+                    onPressed: () => setState(() {
+                      if (defIconNumber == 0){
+                      defpro = Icon(
+                        Icons.check_box
+                      );
+                      defIconNumber = 1;
+                    }else{
+                      defpro = Icon(Icons.check_box_outline_blank);
+                      defIconNumber = 0;
+                      }
+                    }),
                   ),
                 ],
               ),
@@ -122,18 +193,29 @@ class _customizeState extends State<customize> {
                 itemCount: category.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
                 itemBuilder: (BuildContext context, int index){
-                  return Card(
-                    child: GridTile( 
-                      child: Column(
-                        children: [
-                          Text(
-                            category[index][1]
-                          ),
-                          Image.asset(
-                            category[index][0],
+                  return GestureDetector(
+                    onTap: () => null,
+                    child: Card(
+                      child: GridTile( 
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                category[index][1],
+                                style: TextStyle(fontSize: 15),
+                                
+                              ),
+                            ),
+                            Image.asset(
+                              category[index][0],
+                              height: 75,
+                              width: 110,
                             )
-                        ],
+                          ],
+                        ),
                       ),
+                      
                     ),
                   );
                 },
