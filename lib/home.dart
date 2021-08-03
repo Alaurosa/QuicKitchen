@@ -20,7 +20,7 @@ class _homePageState extends State<homePage> {
 
    List<String> filteredSearchHistory = [];
    
-   late String selectedTerm;
+   late String selectedTerm = "";
 
    List<String> filterSearchTerms({
      @required filter,
@@ -256,8 +256,8 @@ class SearchResultsListView extends StatelessWidget {
   final String searchTerm;
 
   const SearchResultsListView({
-    Key key,
-    @required this.searchTerm,
+    Key? key,
+    required this.searchTerm,
   }) : super(key: key);
 
   @override
@@ -283,7 +283,7 @@ class SearchResultsListView extends StatelessWidget {
     final fsb = FloatingSearchBar.of(context);
 
     return ListView(
-      padding: EdgeInsets.only(top: fsb!.height + fsb.margins.vertical),
+      padding: EdgeInsets.only(top: 10/*fsb!.height + fsb.margins.vertical*/),
       children: List.generate(
         50,
         (index) => ListTile(
