@@ -10,7 +10,7 @@ class homePage extends StatefulWidget {
 class _homePageState extends State<homePage> {
   String displayedText=" ";
   final List<Map<String, dynamic>> _allRecipes = [
-    {"id": "Asian Slaw", "name" : "Asian Slaw", "cuisine" : "Asian" }
+    {"id": "Asian Slaw", "name" : "", "cuisine" : "Cuisine: Asian" }
   ];
 
    List<Map<String, dynamic>> _foundRecipes = [
