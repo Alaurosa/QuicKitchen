@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:simplymakedemo/home.dart';
 import 'package:simplymakedemo/navigation.dart';
 
 class customize extends StatefulWidget {
