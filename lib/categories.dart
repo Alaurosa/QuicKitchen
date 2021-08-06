@@ -173,13 +173,13 @@ class _customizeState extends State<customize> {
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
                     onTap: (){
-                      print("clicked");
-                      clicked = true;
-                      setState(() {
-                        bool clicked = (true) ?;
-                        BoxShadow(color: Colors.black);
-                        blurRadius: 20;
-                      });
+                      // print("clicked");
+                      // clicked = true;
+                      // setState(() {
+                      //   bool clicked = (true) ?;
+                      //   BoxShadow(color: Colors.black);
+                      //   blurRadius: 20;
+                      //});
                     },
                     child: Card(
                       child:Container(
