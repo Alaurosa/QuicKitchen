@@ -173,7 +173,20 @@ class _customizeState extends State<customize> {
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
                     onTap: (){
-                      // print("clicked");
+                      if (index == 0){
+                        setState(() {
+                          
+                        });
+                      }else if (index == 1){
+                        clicked = true;
+                      }else if (index == 2){
+                        print("clicked 3");
+                      }else if (index == 3){
+                        print("clicked 4");
+                      }else{
+                        print("clicked 5");
+                      }
+
                       // clicked = true;
                       // setState(() {
                       //   bool clicked = (true) ?;
@@ -182,6 +195,7 @@ class _customizeState extends State<customize> {
                       //});
                     },
                     child: Card(
+                      color: clicked ? Colors.green : Colors.blueGrey,
                       child:Container(
                         color: Colors.blueGrey,
                         child: GridTile(

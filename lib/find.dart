@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simplymakedemo/Tteokbokki.dart';
 
 class findRecipes extends StatefulWidget {
   const findRecipes({Key? key}) : super(key: key);
@@ -18,6 +19,11 @@ class _findRecipesState extends State<findRecipes> {
       "id": "Kimchi",
       "name": "Kimchi Fried Rice",
       "cuisine": "Compenents: Kimchi, Rice, Soy Sauce"
+    },
+    {
+      "id": "Rice Cake",
+      "name": "Tteokbokki",
+      "cuisine": "Compenents: Rice Cakes, Fish Cakes"
     }
   ];
 
@@ -27,6 +33,11 @@ class _findRecipesState extends State<findRecipes> {
   initState() {
     _foundRecipes = _allRecipes;
     super.initState();
+  }
+
+  void tteokbokki() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => KoreanTteokbokki()));
   }
 
   void _runFilter(String enteredKeyword) {
@@ -89,6 +100,9 @@ class _findRecipesState extends State<findRecipes> {
                           title: Text(_foundRecipes[index]['name']),
                           subtitle:
                               Text(_foundRecipes[index]["cuisine"].toString()),
+                          onTap:(){ if (index == 2){
+                            tteokbokki();
+                          }}
                         ),
                       ),
                     )

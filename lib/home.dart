@@ -38,21 +38,31 @@ class _homePageState extends State<homePage> {
                 fit: BoxFit.cover,
               )),
             ),
-            TextButton(
-              style: TextButton.styleFrom(
-                  textStyle: const TextStyle(fontSize: 30)),
-              onPressed: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => findRecipes())),
-              child: const Text("Search"),
+            Padding(
+              padding: const EdgeInsets.only(top: 50.0),
+              child: Container(
+                alignment: Alignment.topCenter,
+                child: Row(
+                  children:[ TextButton(
+                    style: TextButton.styleFrom(
+                        textStyle: const TextStyle(fontSize: 30)),
+                    onPressed: () => Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => findRecipes())),
+                    child: const Text("Search"),
+                  ),
+                Text("| |"),
+                TextButton(
+                  style: TextButton.styleFrom(
+                      textStyle: const TextStyle(fontSize: 30)),
+                  onPressed: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => recommended())),
+                  child: const Text("For You"),
+                ),
+                  ]),
+              ),
             ),
-            Text("| |"),
-            TextButton(
-              style: TextButton.styleFrom(
-                  textStyle: const TextStyle(fontSize: 30)),
-              onPressed: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => recommended())),
-              child: const Text("For You"),
-            ),
+            Container(),
+            Container()
           ],
         )),
         );
