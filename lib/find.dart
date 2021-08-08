@@ -58,17 +58,15 @@ class _findRecipesState extends State<findRecipes> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
+      body: Container(
+      decoration: BoxDecoration(
+          image: DecorationImage(
+        image: AssetImage("assets/SimplyMake food background.jpg"),
+        fit: BoxFit.cover,
+      )), child:Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            Container(
-            decoration: BoxDecoration(
-                image: DecorationImage(
-              image: AssetImage("assets/SimplyMake food background.jpg"),
-              fit: BoxFit.cover,
-            )),
-          ),
             SizedBox(
               height: 10,
             ),
@@ -115,6 +113,6 @@ class _findRecipesState extends State<findRecipes> {
         ),
       ),
       
-    );
+    ));
   }
 }

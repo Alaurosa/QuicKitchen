@@ -8,6 +8,10 @@ class customize extends StatefulWidget {
   _customizeState createState() => _customizeState();
 }
 
+// class category {
+//   late String asset;
+// }
+
 class _customizeState extends State<customize> {
   String displayedText = " ";
   Icon defnov = Icon(Icons.check_box_outline_blank);
@@ -16,12 +20,12 @@ class _customizeState extends State<customize> {
   int defIconNumber = 0;
   bool clicked = false;
 
-  final List<List<String>> category = <List<String>>[
-    ["assets/korean.jpg", "Korean"],
-    ["assets/mexican.jpg", "Mexican"],
-    ["assets/american.jpg", "American"],
-    ["assets/middle eastern.jpg", "Middle Eastern"],
-    ["assets/mediterranean.jpg", "Mediterranean"]
+  final List<List> category =[
+    ["assets/korean.jpg", "Korean", false],
+    ["assets/mexican.jpg", "Mexican", false],
+    ["assets/american.jpg", "American", false],
+    ["assets/middle eastern.jpg", "Middle Eastern", false],
+    ["assets/mediterranean.jpg", "Mediterranean", false]
   ];
 
   void home() {
@@ -31,7 +35,6 @@ class _customizeState extends State<customize> {
       displayedText = " ";
     });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -172,32 +175,14 @@ class _customizeState extends State<customize> {
                     crossAxisCount: 3),
                 itemBuilder: (BuildContext context, int index) {
                   return GestureDetector(
-                    onTap: (){
-                      if (index == 0){
+                    onTap: () {
                         setState(() {
-                          
+                          category[index][2] = !category[index][2];
                         });
-                      }else if (index == 1){
-                        clicked = true;
-                      }else if (index == 2){
-                        print("clicked 3");
-                      }else if (index == 3){
-                        print("clicked 4");
-                      }else{
-                        print("clicked 5");
-                      }
-
-                      // clicked = true;
-                      // setState(() {
-                      //   bool clicked = (true) ?;
-                      //   BoxShadow(color: Colors.black);
-                      //   blurRadius: 20;
-                      //});
                     },
                     child: Card(
-                      color: clicked ? Colors.green : Colors.blueGrey,
-                      child:Container(
-                        color: Colors.blueGrey,
+                      color: category[index][2] ? Colors.grey : Colors.blueGrey,
+                      child: Container(
                         child: GridTile(
                           child: Column(
                             children: [

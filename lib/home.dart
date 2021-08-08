@@ -27,7 +27,12 @@ class _homePageState extends State<homePage> {
         automaticallyImplyLeading: false,
       ),*/
 
-        body: Center(
+        body: Container(
+      decoration: BoxDecoration(
+          image: DecorationImage(
+        image: AssetImage("assets/SimplyMake food background.jpg"),
+        fit: BoxFit.cover,
+      )), child:Center(
             child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -65,6 +70,6 @@ class _homePageState extends State<homePage> {
             Container()
           ],
         )),
-        );
+        ));
   }
 }
