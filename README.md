@@ -1,4 +1,4 @@
-# simplymakedemo
+# QuicKitchen
 
 A new Flutter project.
 
