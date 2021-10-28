@@ -1,6 +1,9 @@
 # QuicKitchen
 
-A new Flutter project.
+Flutter project created for Nebula Entrepreneurship, but continued after
+Made for the purpose of sharing recipes based on the ingredients inputted
+Some users aren't able to make or buy the ingredients they need for the recipes they find, so we wanted to base an app specifically on the user's input
+
 
 ## Getting Started
 
